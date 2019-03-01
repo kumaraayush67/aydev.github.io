@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aayush Kumar</title>
+
+	<!-- https://nostalgic-css.github.io/NES.css/ -->
+
+	<link href="https://unpkg.com/nes.css@2.1.0/css/nes.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" /> -->
+
+    <style>
+    	body{
+    		overflow-x: hidden;
+    		overflow-y: hidden;
+    	}
+    	.container{
+    		max-width: 980px;
+    		margin: 0 auto;
+    	}
+    	dd{
+    		margin-left: 20px;
+    	}
+    	#project-card{
+    		width: 48%;
+    		display: inline-block;
+    		height: 200px;
+    	}
+    	.skillbox1{
+    		width: 65%;
+    		display: inline-block;
+    	}
+    	.skillbox2{
+    		width: 25%;
+    		display: inline-block;
+    	}
+    	.socialLink{
+    		position: relative;
+    	}
+    	.socialLink::after{
+    		content: attr(data-tool-tip);
+    		background-color: #fff;
+    		color: #000;
+    		font-size: 0.6em;
+    		position: absolute;
+    		bottom: 100%;
+    		left: -50%;
+    		text-align: center;
+    		border-radius: 5px;
+    		padding: 2px;
+    		transition: transform ease-out 150ms, bottom ease-out 150ms;;
+    		transform: scale(0);
+    		/*white-space: nowrap;*/
+    	}
+    	.socialLink:hover::after{
+    		transform: scale(1);
+    		bottom: 200%;
+    	}
+    	#toast{
+    		position: absolute;
+    		top: 200px;
+    		opacity: 0.9;
+    		width: 10%;
+    		display: none;
+    		/*overflow: hidden;*/
+    		font-size: 0.5em;
+    		white-space: nowrap;
+    		transition: width ease-out 300ms;
+    	}      
+    	#toast:hover{
+    		width: 15%;
+    	} 
+    	.splash{
+    		width: 100vw;
+    		height: 100vh;	
+    		/*background-color: red;*/
+    		position: relative;
+    		transition: height ease-out 250ms;
+    	}   
+    	.progress{
+    		width: 100%;
+    		position: absolute;
+    		top: 40%;
+    		text-align: center;
+    	}
+    	.progress progress{
+    		width: 50%;
+    	}
+    	.auxi-acadmic{
+    		display: none;
+    	}
+    	@media (max-width: 1000px){
+    		.container{
+	    		max-width: 90%;
+	    		margin: 0 auto;
+	    	}
+	    	#project-card{
+	    		width: 45%;
+	    		height: auto;
+	    		text-align: center;
+	    		padding: 0;
+	    	}
+    	}
+    	@media (max-width: 825px){
+	    	#project-card{
+	    		width: 100%;
+	    		display: block;
+	    		height: auto;
+	    		padding: 32px 24px 32px 24px;
+	    		text-align: center;
+	    		/*padding: 0 !important;*/
+	    	}
+	    	.skillbox1,.skillbox2{
+	    		display: block;
+	    	}
+    	}
+    	@media (max-width: 700px){
+	    	.auxi-acadmic{
+	    		display: block;
+	    	}
+	    	.acadmic{
+	    		display: none;
+	    	}
+    	}
+    	@media (max-width: 360px){
+	    	#project-card{
+	    		font-size: 0.8em;
+	    		height: auto;
+	    		padding: 32px 10px 32px 10px;
+	    		text-align: center;
+	    	}
+    	}
+    </style>
+</head>
+<body style="position: relative;" id="body" onload="splash()">
+
+	<div class="splash" id="splashScreen">
+		<div class="progress">
+			<progress class="nes-progress is-pattern" id="proBar" value="1" max="100"></progress>
+			<h3>LOADING</h3>
+		</div>
+	</div>
+
+	<div class="nes-container is-dark" id="toast">Email copied to Clipboard</div>
+
+	<header class="sticky" style="border-bottom: 5px solid #D3D3D3;padding-top: 10px;">
+	<div class="container">
+		<div class="nav-brand" style="text-align: center;">
+			<h1> aydev</h1>
+		</div>
+	</div>
+	</header>
+
+<div class="container">
+
+	<div class="nes-container with-title is-dark" style="margin-top: 70px">
+		<h3 class="title">Hi! there,</h3>
+		<div class="lists">
+		  	<ul class="nes-list is-disc">
+		    	<!-- <li>Good morning.</li> -->
+		    	<li>I am AAYUSH KUMAR.</li>
+			</ul>
+			<ul class="nes-list is-disc">
+			    <li>Computer Science Engineer.</li>
+			    <li>Web Developer.</li>
+			    <li>Machine Learning Fanatic.</li>
+		  	</ul>
+		  	<ul class="nes-list">
+			  	<div class="social-buttons" >
+					<div class="share">
+						<a onclick="copyEmail()" class="socialLink" data-tool-tip="Gmail"><i class="nes-icon gmail"></i></a> 
+						<a href="https://linkedin.com/in/aayush-kumar-23023414a" class="socialLink" data-tool-tip="Linkedin" target="_blank">
+							<i class="nes-icon linkedin"></i>
+						</a> 
+						<a href="https://github.com/kumaraayush67" class="socialLink" data-tool-tip="Github" target="_blank"><i class="nes-icon github"></i></a>
+					</div>
+				</div>
+			</ul>
+		</div>
+	</div>
+
+	<div class="nes-container with-title" style="margin-top: 70px">
+		<h3 class="title">About</h3>
+		<p style="text-align: center;">This is Aayush Kumar's personal website.<br><br>
+			Aayush is a python developer and tech enthusiast. He is hardworking and passionate about programming.
+		</p>
+	</div>
+
+	<div class="nes-container with-title" style="margin-top: 70px">
+		<h3 class="title">Skills</h3>
+
+		<div class="lists skillbox1">
+		  <h3 class="nes-text is-primary">Libraries and frameworks</h3>	
+		  <ul class="nes-list is-disc">
+		    <li>Djnago</li>
+		    <li>skLearn</li>
+		    <li>OpenCV</li>
+		    <li>Numpy</li>
+		    <li>Pandas</li>
+		    <li>Bootstrap</li>
+		    <li>Django REST Framework</li>
+		  </ul>
+		</div>
+		
+		<div class="lists skillbox2">
+		  <h3 class="nes-text is-primary">Languages</h3>
+		  <ul class="nes-list is-circle">
+		    <li>Python</li>
+		    <li>C++</li>
+		    <li>C</li>
+		    <li>JAVA</li>
+		    <li>Javascript</li>
+		    <li>php</li>
+		    <li>HTML</li>
+		  </ul>
+		</div>	
+	</div>
+
+	<div class="nes-container with-title" style="margin-top: 70px">
+		<h3 class="title">Internships</h3>
+		<div class="lists">
+			<dl class="nes-list is-disc">
+				<dt class="nes-text is-primary">Suchana Patt</dt>
+			  	<dd>A Web development internship to develop a platform to share information about upcoming academic events.</dd>
+			  	<dt class="nes-text is-primary">Upalabdhiyan (On going)</dt>
+			  	<dd>A Web development internship to develop a platform to share information about upcoming academic events.</dd>
+		  	</dl>
+		</div>
+	</div>
+
+	<div class="nes-container with-title" style="margin-top: 70px">
+		<h3 class="title">Projects</h3>
+		<div class="nes-container is-dark" id="project-card">
+			<dt class="nes-text is-primary">ML Model Training Enviroment</dt>
+			<dd>Web Based Enviroment to train and test machine learning models.</dd>
+		</div>
+		<div class="nes-container is-dark" id="project-card">
+			<dt class="nes-text is-primary">Attendace Management with OpenCV</dt>
+			<dd>Application that manages attendence using Face Recognition </dd>
+		</div>
+		<div class="nes-container is-dark" id="project-card">
+			<dt class="nes-text is-primary">Hello Weather</dt>
+			<dd>Web based django application that uses and implements Django REST Framework</dd>
+		</div>
+		<div class="nes-container is-dark" id="project-card">
+			<dt class="nes-text is-primary">Loops</dt>
+			<dd>A Social Networking website build with PHP backend and BootStrap.</dd>
+		</div>
+	</div>
+
+	<div class="nes-container with-title acadmic" style="margin-top: 100px;margin-bottom: 100px">
+		<h3 class="title">Acadmics</h3>
+		<div class="nes-table-responsive">
+		  <table class="nes-table is-bordered is-centered">
+		    <thead>
+		      <tr>
+		        <th>Courses</th>
+		        <th>Institution</th>
+		        <th>Duration</th>
+		        <!-- <th>Marks</th> -->
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		        <td>Secondary  10th standard </td>
+		        <td>St. Xavier's Sr. Sec. School<br>CBSE</td>
+		        <td>2013-2014</td>
+		        <!-- <td>Thou hast had a good night</td> -->
+		      </tr>
+		      <tr>
+		        <td>Senior Secondary 12th Standard</td>
+		        <td>St. Xavier's Sr. Sec School<br>CBSE</td>
+		        <td>2015-2016</td>
+		        <!-- <td>Thou hast had a good night</td> -->
+		      </tr>
+		      <tr>
+		        <td>B.Tech (CSE)</td>
+		        <td>HMR Institute of Management and Technology</td>
+		        <td>2016-Present</td>
+		        <!-- <td>Thou hast had a good night</td> -->
+		      </tr>
+		    </tbody>
+		  </table>
+		</div>
+	</div>
+
+	<div class="nes-container with-title auxi-acadmic" style="margin-top: 70px">
+		<h3 class="title">Acadmics</h3>
+
+		<div class="lists">
+		  <dt>Secondary  10th standard</dt>	
+		  <ul class="nes-list is-disc">
+		    <li>St. Xavier's Sr. Sec. School, CBSE</li>
+		    <li>2013-2014</li>
+		  </ul>
+		</div>
+		
+		<div class="lists">
+		  <dt>Senior Secondary 12th Standard</dt>
+		  <ul class="nes-list is-disc">
+		    <li>St. Xavier's Sr. Sec. School, CBSE</li>
+		    <li>2015-2016</li>
+		  </ul>
+		</div>	
+
+		<div class="lists">
+		  <dt>B.Tech (CSE)</dt>
+		  <ul class="nes-list is-disc">
+		    <li>HMR Institute of Management and Technology</li>
+		    <li>2016-Present</li>
+		  </ul>
+		</div>	
+	</div>
+
+	<!-- <div class="nes-container with-title" style="margin-top: 100px">
+		<h3 class="title">Process Bar</h3>
+		<progress class="nes-progress is-error" value="10" max="100"></progress>
+		<progress class="nes-progress is-pattern" value="50" max="100"></progress>
+	</div>
+ -->
+	
+</div>
+<script>
+function copyEmail() {
+	document.getElementById("toast").style.display = "block";
+	const el = document.createElement('textarea');
+	el.value = "kumaraayush67@gmail.com";
+	document.body.appendChild(el);
+	el.select();
+	document.execCommand('copy');
+	document.body.removeChild(el);
+	
+	// window.setTimeout()
+	document.getElementById("toast").style.width = "15%";
+	setTimeout(hideToast, 2000);
+}
+function hideToast(){
+	document.getElementById("toast").style.width = "0%";
+	document.getElementById("toast").style.display = "none";
+}
+</script>
+<script>
+function splash(){
+	var proBar = document.getElementById("proBar");
+	console.log(proBar.value);
+	var width = proBar.value;
+	var id = setInterval(frame, 10);
+	function frame(){
+		if(width>=100){
+			clearInterval(id);
+			document.getElementById("splashScreen").style.height = "0px";
+			setTimeout(function(){
+				document.getElementById("splashScreen").style.display = "none";
+			}, 250);
+			document.getElementById("body").style.overflowY = "auto";
+		}
+		else {
+			width++;
+			proBar.value = width;
+		}
+	}
+}
+</script>
+
+</body>
+</html>
